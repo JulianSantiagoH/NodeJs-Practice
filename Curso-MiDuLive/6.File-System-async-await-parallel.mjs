@@ -1,0 +1,11 @@
+import { readFile } from "node:fs/promises";
+// import { text } from "node:stream/consumers";
+
+Promise.all([
+    readFile("./archivo.txt", "utf-8"),
+    readFile("./archivo2.txt", "utf-8")
+]). then(([text,text2])=>{
+    console.log("Primer Texto", text);
+    console.log("Segundo Texto", text2);
+})
+
